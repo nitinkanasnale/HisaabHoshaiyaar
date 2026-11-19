@@ -1,0 +1,49 @@
+{
+  "name": "hisaab-hoshiyaar-mern",
+  "version": "3.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "concurrently -k npm:dev:server npm:dev:client",
+    "dev:server": "node --watch server/src/index.js",
+    "dev:client": "vite client --config client/vite.config.js",
+    "build": "vite build client --config client/vite.config.js",
+    "start": "node server/src/index.js",
+    "test": "node --test --test-concurrency=1 server/test/*.test.js && vitest run --config client/vite.config.js",
+    "test:api": "node --test --test-concurrency=1 server/test/*.test.js",
+    "import:legacy": "node scripts/import-legacy.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "jsdom": "^26.1.0",
+    "mongodb-memory-server": "^10.2.3",
+    "prettier": "^3.10.1",
+    "supertest": "^7.1.4",
+    "tailwindcss": "^4.1.16",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.1",
+    "nodemailer": "^10.6.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.3.0",
+    "zod": "^4.1.12"
+  },
+  "type": "module"
+}

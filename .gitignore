@@ -1,0 +1,35 @@
+# Credentials and local/private data
+.env
+.env.*
+!.env.example
+**/private-backups/
+**/*backup*.ejson
+*.jks
+*.keystore
+key.properties
+**/local.properties
+
+# Dependencies and build products
+node_modules/
+**/node_modules/
+**/build/
+**/dist/
+**/.dart_tool/
+**/.gradle/
+**/.kotlin/
+**/.cxx/
+**/coverage/
+**/work/
+**/.flutter-plugins*
+*.apk
+*.aab
+*.zip
+*.log
+*.tmp
+
+# Editors and operating systems
+.idea/
+**/.idea/
+*.iml
+.DS_Store
+Thumbs.db

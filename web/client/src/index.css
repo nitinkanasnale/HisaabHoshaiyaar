@@ -1,0 +1,207 @@
+@import "tailwindcss";
+@import "./original.css";
+/* React adaptations use the original theme, tokens, charts and responsive layout. */
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.brand {
+  background: transparent;
+  border: 0;
+  color: inherit;
+}
+.text-link {
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  padding: 0;
+  color: inherit;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.table-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-scroll th,
+.table-scroll td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 2px solid #000;
+  vertical-align: top;
+}
+.hh-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  border: 3px solid #000;
+  border-radius: 8px;
+  box-shadow: 8px 8px #000;
+  background: var(--bg);
+  color: #000;
+  padding: 1.5rem;
+  width: min(760px, 94vw);
+  max-height: 90vh;
+  overflow: auto;
+}
+.hh-modal::backdrop {
+  background: #0009;
+}
+.hh-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 85vw;
+  padding: 1rem 1.5rem;
+  background: var(--amber);
+  border: 3px solid #000;
+  box-shadow: 4px 4px #000;
+  z-index: 1000;
+}
+.chart-frame {
+  width: 100%;
+  min-width: 0;
+}
+.chat-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 22px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chat-panel {
+  position: fixed;
+  bottom: 85px;
+  right: 22px;
+  z-index: 40;
+  width: min(440px, calc(100vw - 30px));
+  max-height: 80vh;
+  padding: 1rem;
+  background: var(--bg);
+  border: 3px solid #000;
+  box-shadow: 6px 6px #000;
+  border-radius: 8px;
+  overflow: auto;
+}
+.chat-history {
+  max-height: 40vh;
+  overflow: auto;
+}
+.chat-message {
+  padding: 0.7rem;
+  margin: 0.6rem 0;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+.chat-message.user {
+  background: var(--teal-light);
+}
+.err {
+  color: #b00020;
+}
+.pos {
+  color: #007c57;
+}
+.neg {
+  color: #bd0024;
+}
+.input {
+  min-width: 0;
+}
+.card .val {
+  overflow-wrap: anywhere;
+}
+dialog .input {
+  width: 100%;
+}
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+.wrap {
+  padding-bottom: 80px;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 900;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+p {
+  margin: 0.75rem 0;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .stats-grid,
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+  .hdr {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .table-scroll th,
+  .table-scroll td {
+    padding: 0.5rem;
+  }
+  .brand {
+    font-size: 1.2rem;
+  }
+}
